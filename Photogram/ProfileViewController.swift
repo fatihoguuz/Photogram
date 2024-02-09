@@ -17,16 +17,11 @@ class ProfileViewController: UIViewController {
     }
     
 
+    @IBAction func settingsButton(_ sender: Any) {
+        performSegue(withIdentifier: "toSettingsVC", sender: nil)
+    }
+    
 
-    @IBAction func logoutClicked(_ sender: Any) {
-        
-        do{
-            try Auth.auth().signOut()
-            performSegue(withIdentifier: "toViewController", sender: nil)
-            
-        }catch{print("Error")
-            
-        }
         
     }
-}
+

@@ -18,6 +18,7 @@
 		3D34D03C2B740D4600110B20 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 3D34D03B2B740D4600110B20 /* FirebaseAuth */; };
 		3D34D0482B740D4600110B20 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 3D34D0472B740D4600110B20 /* FirebaseFirestore */; };
 		3D34D0622B740D4700110B20 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 3D34D0612B740D4700110B20 /* FirebaseStorage */; };
+		3D3CCDAA2B765CD100683996 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3CCDA92B765CD100683996 /* SettingsViewController.swift */; };
 		3D55CE5A2B74F5030018BBA4 /* UploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D55CE592B74F5030018BBA4 /* UploadViewController.swift */; };
 		3D55CE5C2B74F5160018BBA4 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D55CE5B2B74F5160018BBA4 /* ProfileViewController.swift */; };
 		3D55CE622B7516590018BBA4 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D55CE612B7516590018BBA4 /* SignUpViewController.swift */; };
@@ -33,6 +34,7 @@
 		3D34D0242B73D4A700110B20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3D34D0262B73D4A700110B20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3D34D02C2B74084100110B20 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		3D3CCDA92B765CD100683996 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		3D55CE592B74F5030018BBA4 /* UploadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadViewController.swift; sourceTree = "<group>"; };
 		3D55CE5B2B74F5160018BBA4 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		3D55CE612B7516590018BBA4 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 				3D55CE612B7516590018BBA4 /* SignUpViewController.swift */,
 				3D55CE592B74F5030018BBA4 /* UploadViewController.swift */,
 				3D55CE5B2B74F5160018BBA4 /* ProfileViewController.swift */,
+				3D3CCDA92B765CD100683996 /* SettingsViewController.swift */,
 				3D34D01E2B73D4A300110B20 /* Main.storyboard */,
 				3D34D0212B73D4A700110B20 /* Assets.xcassets */,
 				3D34D0232B73D4A700110B20 /* LaunchScreen.storyboard */,
@@ -170,6 +173,7 @@
 			files = (
 				3D55CE5C2B74F5160018BBA4 /* ProfileViewController.swift in Sources */,
 				3D55CE622B7516590018BBA4 /* SignUpViewController.swift in Sources */,
+				3D3CCDAA2B765CD100683996 /* SettingsViewController.swift in Sources */,
 				3D55CE5A2B74F5030018BBA4 /* UploadViewController.swift in Sources */,
 				3D34D01D2B73D4A300110B20 /* ViewController.swift in Sources */,
 				3D34D0192B73D4A300110B20 /* AppDelegate.swift in Sources */,

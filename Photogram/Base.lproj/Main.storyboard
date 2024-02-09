@@ -21,15 +21,6 @@
                                 <rect key="frame" x="46" y="114" width="300" height="300"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iYm-Me-5F4">
-                                <rect key="frame" x="304" y="41" width="84" height="59"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="powersleep" catalog="system"/>
-                                <connections>
-                                    <action selector="darkMode:" destination="RSc-dT-hVN" eventType="touchUpInside" id="NsY-fI-1mR"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="n7z-dc-Mv7"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -51,25 +42,57 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gn1-Cv-84k">
-                                <rect key="frame" x="290" y="48" width="87" height="52"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nUL-4W-I93">
+                                <rect key="frame" x="312" y="56" width="75" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="LogOut"/>
+                                <buttonConfiguration key="configuration" style="plain" image="line.3.horizontal" catalog="system"/>
                                 <connections>
-                                    <action selector="logoutClicked:" destination="m7d-CV-Ako" eventType="touchUpInside" id="GmN-Yv-apn"/>
-                                    <segue destination="BYZ-38-t0r" kind="presentation" identifier="toViewController" modalPresentationStyle="fullScreen" id="oeZ-la-UAN"/>
+                                    <action selector="settingsButton:" destination="m7d-CV-Ako" eventType="touchUpInside" id="cOh-MM-ibc"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="uFa-2n-ds5"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="tintColor" systemColor="linkColor"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="person.crop.circle" catalog="system" selectedImage="person.crop.circle" id="7aN-U9-q04"/>
+                    <connections>
+                        <segue destination="lEP-gT-APR" kind="presentation" identifier="toSettingsVC" id="7f1-SK-VW9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rgp-aG-6sh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-622.13740458015263" y="820.4225352112677"/>
+        </scene>
+        <!--Title-->
+        <scene sceneID="mPr-RU-Cae">
+            <objects>
+                <viewController id="lEP-gT-APR" customClass="SettingsViewController" customModule="Photogram" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="d0G-lc-TKi">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gn1-Cv-84k">
+                                <rect key="frame" x="16" y="683" width="361" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" title="LogOut"/>
+                                <connections>
+                                    <action selector="logoutClicked:" destination="m7d-CV-Ako" eventType="touchUpInside" id="GmN-Yv-apn"/>
+                                    <action selector="signOutClicked:" destination="lEP-gT-APR" eventType="touchUpInside" id="QGf-v4-J5z"/>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" identifier="toViewController" modalPresentationStyle="fullScreen" id="oeZ-la-UAN"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="4et-5E-21F"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Title" id="37Q-ml-Ir5"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bl1-od-J85" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="278.62595419847327" y="819.71830985915494"/>
         </scene>
         <!--Main Menu View Controller-->
         <scene sceneID="nft-WQ-h9E">
@@ -272,11 +295,14 @@
     </inferredMetricsTieBreakers>
     <resources>
         <image name="house" catalog="system" width="128" height="104"/>
+        <image name="line.3.horizontal" catalog="system" width="128" height="65"/>
         <image name="p" width="2829" height="1640"/>
         <image name="person.crop.circle" catalog="system" width="128" height="123"/>
         <image name="ph" width="2671" height="645"/>
         <image name="plus.circle.fill" catalog="system" width="128" height="123"/>
-        <image name="powersleep" catalog="system" width="125" height="128"/>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

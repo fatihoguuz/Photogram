@@ -23,11 +23,7 @@ class UploadViewController: UIViewController {
 
     
     
-    @IBAction func darkMode(_ sender: Any) {
-        
-        
-        
-    }
+
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         let userInterfaceStayle = traitCollection.userInterfaceStyle
