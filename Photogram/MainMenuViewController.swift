@@ -7,22 +7,30 @@
 
 import UIKit
 import Firebase
+import SDWebImage
 
 class MainMenuViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    //let cellReuseIdentifier = "cell"
+    //let cellSpacingHeight: CGFloat = 5
      var userEmailArray = [String]()
     var commentArray = [String]()
     var likeArray = [Int]()
     var userImageArray = [String]()
-
+    //let tool: [String] = ["userEmailArray", "commentArray", "userImageArray"]
    
+    
     @IBOutlet weak var tableView: UITableView!
+    
+  
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+       // self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
         tableView.delegate = self
         tableView.dataSource = self
         getDataFromFirestore()
+        
+        
     }
     //verileri cekmek
     func getDataFromFirestore() {
@@ -33,8 +41,16 @@ class MainMenuViewController: UIViewController, UITableViewDelegate, UITableView
                 print(error?.localizedDescription)
             }else {
                 if snapshot?.isEmpty != true && snapshot != nil {
+                    
+                    self.userEmailArray.removeAll(keepingCapacity: false)
+                    self.commentArray.removeAll(keepingCapacity: false)
+                    self.likeArray.removeAll(keepingCapacity: false)
+                    self.userImageArray.removeAll(keepingCapacity: false)
+
+                    
                     for document in snapshot!.documents {
                         let documentID = document.documentID
+                       
                         
                        if let postedBy = document.get("postedBy") as? String {
                         self.userEmailArray.append(postedBy)
@@ -42,9 +58,9 @@ class MainMenuViewController: UIViewController, UITableViewDelegate, UITableView
                         if let postComment = document.get("postComment") as? String {
                             self.commentArray.append(postComment)
                         }
-                       // if let likes = document.get("likes") as? Int {
-                           // self.likeArray.append(likes)
-                        //}
+                        if let likes = document.get("likes") as? Int {
+                            self.likeArray.append(likes)
+                        }
                         if let imageUrl = document.get("imageUrl") as? String {
                             self.userImageArray.append(imageUrl)
                         }
@@ -56,18 +72,41 @@ class MainMenuViewController: UIViewController, UITableViewDelegate, UITableView
         }
     }
     
+
+   // func tableView(_ tableView: UITableView, estimatedHeightForHeaderInSection section: Int) -> CGFloat {
+     //   return cellSpacingHeight
+   // }
+    
+    
+   // func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+         // let headerView = UIView()
+        //  headerView.backgroundColor = UIColor.clear
+         // return headerView
+     // }
+    
+    
+    
+    
     
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
         return userImageArray.count
+        
+    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return CGFloat(500)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! MainMenuTableViewCell
+       // cell.textLabel?.text = self.tool[indexPath.section]
         cell.userName.text = userEmailArray[indexPath.row]
-        //cell.likeLabel.text = String(likeArray[indexPath.row])
+        cell.likeLabel.text = ("\( String(likeArray[indexPath.row])) beğenme")
         cell.commentLabel.text = commentArray[indexPath.row]
-        cell.userImageView.image = UIImage(named: "F")
+        cell.userImageView.sd_setImage(with: URL(string: self.userImageArray[indexPath.row]))
+    
         return cell
     }
+    
 }

@@ -9,11 +9,12 @@ import UIKit
 
 class MainMenuTableViewCell: UITableViewCell {
  
-    @IBOutlet weak var userName: UILabel!
-    
     @IBOutlet weak var userImageView: UIImageView!
     
-
+    @IBOutlet weak var userName: UILabel!
+    
+    @IBOutlet weak var likeLabel: UILabel!
+    
     @IBOutlet weak var commentLabel: UILabel!
     
     override func awakeFromNib() {
