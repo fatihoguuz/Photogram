@@ -16,6 +16,7 @@ class MainMenuViewController: UIViewController, UITableViewDelegate, UITableView
     var commentArray = [String]()
     var likeArray = [Int]()
     var userImageArray = [String]()
+    var documentIdArray = [String]()
     //let tool: [String] = ["userEmailArray", "commentArray", "userImageArray"]
    
     
@@ -36,7 +37,7 @@ class MainMenuViewController: UIViewController, UITableViewDelegate, UITableView
     func getDataFromFirestore() {
         let firestoreDataBase = Firestore.firestore()
         //let settings = firestoreDataBase.settings
-        firestoreDataBase.collection("Posts").addSnapshotListener { (snapshot , error) in
+        firestoreDataBase.collection("Posts").order(by: "date", descending: true).addSnapshotListener { (snapshot , error) in
             if error != nil {
                 print(error?.localizedDescription)
             }else {
@@ -46,11 +47,11 @@ class MainMenuViewController: UIViewController, UITableViewDelegate, UITableView
                     self.commentArray.removeAll(keepingCapacity: false)
                     self.likeArray.removeAll(keepingCapacity: false)
                     self.userImageArray.removeAll(keepingCapacity: false)
-
+                    self.documentIdArray.removeAll(keepingCapacity: false)
                     
                     for document in snapshot!.documents {
                         let documentID = document.documentID
-                       
+                        self.documentIdArray.append(documentID)
                         
                        if let postedBy = document.get("postedBy") as? String {
                         self.userEmailArray.append(postedBy)
@@ -102,10 +103,10 @@ class MainMenuViewController: UIViewController, UITableViewDelegate, UITableView
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! MainMenuTableViewCell
        // cell.textLabel?.text = self.tool[indexPath.section]
         cell.userName.text = userEmailArray[indexPath.row]
-        cell.likeLabel.text = ("\( String(likeArray[indexPath.row])) beğenme")
+        cell.likeLabel.text = String(likeArray[indexPath.row])
         cell.commentLabel.text = commentArray[indexPath.row]
         cell.userImageView.sd_setImage(with: URL(string: self.userImageArray[indexPath.row]))
-    
+        cell.documentIdLabel.text = documentIdArray[indexPath.row]
         return cell
     }
     

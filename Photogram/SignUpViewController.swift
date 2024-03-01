@@ -10,18 +10,21 @@ import Firebase
 
 class SignUpViewController: UIViewController{
 
+    @IBOutlet weak var userNameText: UITextField!
+    
     @IBOutlet weak var emailText: UITextField!
     
     
     @IBOutlet weak var passwordText: UITextField!
     
+
     
-    
-   
+   let tableView = UITableView()
     
     @IBOutlet weak var saveButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         
       /*  if emailText.text == "" && passwordText.text == ""{
@@ -42,7 +45,11 @@ class SignUpViewController: UIViewController{
     }
             
         
-        
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.destination is MainMenuViewController{
+            let vc = segue.destination as? MainMenuViewController
+        }
+    }
         
        
     

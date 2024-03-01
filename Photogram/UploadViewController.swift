@@ -14,6 +14,7 @@ class UploadViewController: UIViewController, UIImagePickerControllerDelegate, U
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var textView: UITextField!
     @IBOutlet weak var shareButton: UIButton!
+    let userName = kCFHTTPAuthenticationUsername
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,10 +26,11 @@ class UploadViewController: UIViewController, UIImagePickerControllerDelegate, U
     override func viewWillAppear(_ animated: Bool) {
         let userInterfaceStayle = traitCollection.userInterfaceStyle
         
+    
       
     }
     
-    
+   
     func makeAlert(titleInput: String , messageInput: String) {
         let alert = UIAlertController(title: titleInput, message: messageInput, preferredStyle: UIAlertController.Style.alert)
         let okButton = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil)
@@ -59,7 +61,7 @@ class UploadViewController: UIViewController, UIImagePickerControllerDelegate, U
                 
                            let firestoreDataBase = Firestore.firestore()
                             var firestoreReference : DocumentReference? = nil
-                            let firestorePosts = ["imageUrl" : imageUrl! , "postedBy" : Auth.auth().currentUser?.email! , "postComment" : self.textView.text! , "date" : FieldValue.serverTimestamp() , "likes" : 0] as [String : Any]
+                            let firestorePosts = ["imageUrl" : imageUrl! , "postedBy" : self.userName  , "postComment" : self.textView.text! , "date" : FieldValue.serverTimestamp() , "likes" : 0] as [String : Any]
                             firestoreReference = firestoreDataBase.collection("Posts").addDocument(data: firestorePosts , completion: { (Error) in
                                 if error != nil {
                                     self.makeAlert(titleInput: "Error!", messageInput: error?.localizedDescription ?? "Error")
@@ -83,6 +85,14 @@ class UploadViewController: UIViewController, UIImagePickerControllerDelegate, U
         
         
        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "userName"{
+            if let destinationVC = segue.destination as? MainMenuViewController {
+               
+            }
+        }
     }
     
     @objc func sharedButtonClicked() {
