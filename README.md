@@ -1,6 +1,8 @@
 
 Hi everyone! I'm happy to say my Photogram App is completed.The app is similar to the old Instagram. 
 
+![photogram](https://github.com/fatihoguuz/Photogram/assets/141723606/7716f9b4-b054-4f00-b9a4-07060ee0f38f)
+
 
 [https://github.com/fatihoguuz/Photogram/assets/141723606/16807f81-e945-46c5-b5de-3ed8b93896a7](https://github.com/fatihoguuz/Photogram/assets/141723606/a39ff6f2-b586-438b-b43a-d36f7b7fc81e)
 
