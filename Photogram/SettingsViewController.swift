@@ -19,11 +19,6 @@ class SettingsViewController: UIViewController {
     
     @IBAction func signOutClicked(_ sender: Any) {
         
-        do{
-            try Auth.auth().signOut()
-            performSegue(withIdentifier: "toViewController", sender: nil)
-            
-        }catch{print("Error")
-        }
+       
     }
 }

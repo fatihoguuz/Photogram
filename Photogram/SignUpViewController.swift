@@ -55,6 +55,8 @@ class SignUpViewController: UIViewController{
     
     @IBAction func saveButton(_ sender: Any) {
         if emailText.text != "" && passwordText.text != ""{
+            UserData.shared.eMail = emailText.text
+            UserData.shared.userName = userNameText.text
             Auth.auth().createUser(withEmail: emailText.text! , password: passwordText.text!) { (authdata, error) in
                 if error != nil {
                     self.makeAlert(titleInput: "ERROR!", messageInput: error?.localizedDescription ?? "ERROR" )

@@ -22,6 +22,7 @@
 		3D55CE5A2B74F5030018BBA4 /* UploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D55CE592B74F5030018BBA4 /* UploadViewController.swift */; };
 		3D55CE5C2B74F5160018BBA4 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D55CE5B2B74F5160018BBA4 /* ProfileViewController.swift */; };
 		3D55CE622B7516590018BBA4 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D55CE612B7516590018BBA4 /* SignUpViewController.swift */; };
+		3D763C942B94A87200DBFF30 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D763C932B94A87200DBFF30 /* UserData.swift */; };
 		3DA3090E2B8733ED00645C7C /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 3DA3090D2B8733ED00645C7C /* SDWebImage */; };
 		3DCF1E592B7E6244006447C1 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCF1E582B7E6243006447C1 /* MainMenuViewController.swift */; };
 		3DCF1E5B2B7E62B3006447C1 /* MainMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCF1E5A2B7E62B3006447C1 /* MainMenuTableViewCell.swift */; };
@@ -41,6 +42,7 @@
 		3D55CE592B74F5030018BBA4 /* UploadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadViewController.swift; sourceTree = "<group>"; };
 		3D55CE5B2B74F5160018BBA4 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		3D55CE612B7516590018BBA4 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		3D763C932B94A87200DBFF30 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		3DCF1E582B7E6243006447C1 /* MainMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
 		3DCF1E5A2B7E62B3006447C1 /* MainMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -89,6 +91,7 @@
 				3D55CE592B74F5030018BBA4 /* UploadViewController.swift */,
 				3D55CE5B2B74F5160018BBA4 /* ProfileViewController.swift */,
 				3D3CCDA92B765CD100683996 /* SettingsViewController.swift */,
+				3D763C932B94A87200DBFF30 /* UserData.swift */,
 				3D34D01E2B73D4A300110B20 /* Main.storyboard */,
 				3D34D0212B73D4A700110B20 /* Assets.xcassets */,
 				3D34D0232B73D4A700110B20 /* LaunchScreen.storyboard */,
@@ -189,6 +192,7 @@
 				3DCF1E5B2B7E62B3006447C1 /* MainMenuTableViewCell.swift in Sources */,
 				3D34D01D2B73D4A300110B20 /* ViewController.swift in Sources */,
 				3D34D0192B73D4A300110B20 /* AppDelegate.swift in Sources */,
+				3D763C942B94A87200DBFF30 /* UserData.swift in Sources */,
 				3D34D01B2B73D4A300110B20 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

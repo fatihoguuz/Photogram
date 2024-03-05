@@ -61,7 +61,7 @@ class UploadViewController: UIViewController, UIImagePickerControllerDelegate, U
                 
                            let firestoreDataBase = Firestore.firestore()
                             var firestoreReference : DocumentReference? = nil
-                            let firestorePosts = ["imageUrl" : imageUrl! , "postedBy" : self.userName  , "postComment" : self.textView.text! , "date" : FieldValue.serverTimestamp() , "likes" : 0] as [String : Any]
+                            let firestorePosts = ["imageUrl" : imageUrl! , "postedBy" : Auth.auth().currentUser!.email!  , "postComment" : self.textView.text! , "date" : FieldValue.serverTimestamp() , "likes" : 0] as [String : Any]
                             firestoreReference = firestoreDataBase.collection("Posts").addDocument(data: firestorePosts , completion: { (Error) in
                                 if error != nil {
                                     self.makeAlert(titleInput: "Error!", messageInput: error?.localizedDescription ?? "Error")
@@ -75,6 +75,8 @@ class UploadViewController: UIViewController, UIImagePickerControllerDelegate, U
                         
                             
                             
+                            
+                            
                         }
                     }
                 }
@@ -86,6 +88,8 @@ class UploadViewController: UIViewController, UIImagePickerControllerDelegate, U
         
        
     }
+    
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "userName"{

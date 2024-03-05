@@ -29,11 +29,17 @@ class MainMenuViewController: UIViewController, UITableViewDelegate, UITableView
        // self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
         tableView.delegate = self
         tableView.dataSource = self
+        print(UserData.shared.userName)
         getDataFromFirestore()
         
         
     }
-    //verileri cekmek
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        print(UserData.shared.userName)
+        print("ffff")
+    }
+    //MARK: verileri cekmek
     func getDataFromFirestore() {
         let firestoreDataBase = Firestore.firestore()
         //let settings = firestoreDataBase.settings
@@ -103,7 +109,7 @@ class MainMenuViewController: UIViewController, UITableViewDelegate, UITableView
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! MainMenuTableViewCell
        // cell.textLabel?.text = self.tool[indexPath.section]
         cell.userName.text = userEmailArray[indexPath.row]
-        cell.likeLabel.text = String(likeArray[indexPath.row])
+        cell.likeLabel.text = "\(likeArray[indexPath.row])"
         cell.commentLabel.text = commentArray[indexPath.row]
         cell.userImageView.sd_setImage(with: URL(string: self.userImageArray[indexPath.row]))
         cell.documentIdLabel.text = documentIdArray[indexPath.row]
